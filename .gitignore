@@ -1,1 +1,28 @@
+import time
 
+# function to calculate typing speed in wpm
+
+def calculate_typing_speed(text, time_taken):
+    words = text.split()
+    num_words = len(words)
+    minutes = time_taken / 60
+    wpm = num_words / minutes
+    return wpm
+
+# Start typing the text
+
+def typing_speed_test():
+    print("Welcome to the Typing Speed Tester!")
+    print("You will be presented with random text to type below.")
+    
+# to generate random text for typing
+
+    text = "The quick brown fox jumps over the lazy dog."
+    input("Press Enter when you are ready to start...")
+    start_time = time.time()
+    user_input = input(text + "\n")
+    end_time = time.time()
+    time_taken = end_time - start_time  
+    wpm = calculate_typing_speed(user_input, time_taken)
+    print(f"\nYour typing speed: {wpm} WPM")
+typing_speed_test()
